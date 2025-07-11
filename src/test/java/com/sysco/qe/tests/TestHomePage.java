@@ -12,7 +12,7 @@ public class TestHomePage extends TestBase {
 
     @BeforeClass(alwaysRun = true)
     public void init(ITestContext iTestContext) {
-        iTestContext.setAttribute("feature", TestModules.NAVIGATION +" - "+ TestFeatures.VALID_NAVIGATION);
+        iTestContext.setAttribute("feature", TestModules.REGRESSION_DAY03 +" - "+ TestFeatures.PDPTEST);
     }
 
     @Test(description = "QMetry TC ID 01")
