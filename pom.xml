@@ -24,7 +24,13 @@
         <dependency>
             <groupId>com.sysco.qe</groupId>
             <artifactId>sutap_core</artifactId>
-            <version>3.2.2</version>
+            <version>3.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sysco.qe</groupId>
+            <artifactId>qe-utils</artifactId>
+            <version>1.4.21</version>
         </dependency>
     </dependencies>
 

@@ -10,8 +10,7 @@ public class Constants {
     public static String TEST_RELEASE = System.getProperty("test.release", "TEMP_TEST");
     public static final boolean UPDATE_DASHBOARD = Boolean.parseBoolean(System.getProperty("update.dashboard", "true"));
     public static String QLYTICS_DAILY_WEEKLY_BUILD = System.getProperty("daily.weekly.build","daily");
-
-    public static final boolean BUILD_GENERATE = Boolean.parseBoolean(System.getProperty("build.generate", "false"));
+    public static final boolean IS_CREATE_BUILD_ENABLED = Boolean.parseBoolean(System.getProperty("build.generate", "true"));
     public static final String TEST_LAYER = System.getProperty("test.layers");
     public static String QLYTICS_BUILD_COMPLETION = System.getProperty("build.completion", "false");
 
