@@ -17,7 +17,7 @@ public class TestHomePage extends TestBase {
 
     @Test(description = "QMetry TC ID 01")
     public void loadHomePage(){
-//        Home.loadURl();
+        Home.loadURl();
         softAssert.assertTrue(Home.isHomePageTitleDisplayed(),"Home Page error");
         System.out.println("TC ID 1 done>>>>>>>>>>>>>>>>>>>>");
 
