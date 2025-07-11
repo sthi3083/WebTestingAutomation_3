@@ -32,6 +32,7 @@
             <artifactId>qe-utils</artifactId>
             <version>1.4.21</version>
         </dependency>
+
     </dependencies>
 
     <profiles>
@@ -56,12 +57,17 @@
                             <suiteXmlFiles>
                                 <suiteXmlFile>./src/test/regression.xml</suiteXmlFile>
                             </suiteXmlFiles>
-                            <forkMode>never</forkMode>
-
-                            <systemPropertyVariables>
-                                <retry.enabled>true</retry.enabled>
-                                <max.retry.count>1</max.retry.count>
-                            </systemPropertyVariables>
+<!--                            <forkMode>never</forkMode>-->
+                            <systemProperties>
+                                <property>
+                                    <name>update.dashboard</name>
+                                    <value>true</value>
+                                </property>
+                            </systemProperties>
+<!--                            <systemPropertyVariables>-->
+<!--                                <retry.enabled>true</retry.enabled>-->
+<!--                                <max.retry.count>1</max.retry.count>-->
+<!--                            </systemPropertyVariables>-->
                         </configuration>
                     </plugin>
                 </plugins>

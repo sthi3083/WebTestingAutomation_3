@@ -6,11 +6,8 @@ import com.syscolab.qe.core.playwright.ui.BaseBrowser;
 import com.syscolab.qe.core.reporting.SyscoLabListener;
 import com.syscolab.qe.core.reporting.SyscoLabQCenter;
 import com.syscolab.qe.core.reporting.SyscoLabReporting;
-//import com.syscolab.qe.core.util.qcenter.QCenterUtil;
 import static com.sysco.qe.common.Constants.IS_CREATE_BUILD_ENABLED;
 import static com.syscolab.qe.core.reporting.SyscoLabReporting.generateBuild;
-
-
 import org.json.JSONException;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
@@ -22,8 +19,6 @@ public class TestBase extends BaseBrowser {
     public SoftAssert softAssert;
     private SyscoLabListener testListeners;
     protected SyscoLabQCenter syscoLabQCenter;
-
-
 
     @BeforeSuite(alwaysRun = true)
     public void configureReporting() {
@@ -46,11 +41,13 @@ public class TestBase extends BaseBrowser {
             System.setProperty("qmetry.custom.fields.map", Constants.QMETRY_CUSTOM_FIELD_MAP);
         }
     }
+
     public void createQCenterBuild() throws JSONException {
         if (IS_CREATE_BUILD_ENABLED) {
             generateBuild();
         }
     }
+
     @BeforeSuite
     public void runBeforeSuite() {
         configureReporting();
@@ -68,7 +65,6 @@ public class TestBase extends BaseBrowser {
     public void init() {
         testListeners = new SyscoLabListener();
         syscoLabQCenter = new SyscoLabQCenter();
-//        //open the browser and load the login page
         //Home.loadURl();
     }
 
@@ -76,11 +72,6 @@ public class TestBase extends BaseBrowser {
     public void initSoftAssert() {
         softAssert = new SoftAssert();
     }
-
-//    @BeforeTest(alwaysRun = true)
-//    public void beforeTest() {
-//        System.out.println("Test Running " + this.getClass().toString());
-//    }
 
     @AfterMethod(alwaysRun = true)
     public void updateQCenter(ITestContext iTestContext) {
@@ -101,8 +92,6 @@ public class TestBase extends BaseBrowser {
             e.printStackTrace();
         }
     }
-
-
 
     @AfterClass(alwaysRun = true)
     public void cleanUp(ITestContext iTestContext) {
